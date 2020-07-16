@@ -1,0 +1,315 @@
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(64, 64, 64, 0.47);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+}
+
+* {
+    /*     font-family: 'Jost', sans-serif; */
+    /*     font-family: 'Titillium Web', sans-serif; */
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: default;
+    -webkit-app-region: drag;
+    background-image: url(images/corona1.jpg);
+    -webkit-user-select: none;
+    /* background-image: url(images/corona1.jpg); */
+}
+
+
+/* {
+    font-family: 'Jost', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+} */
+
+#widget-title {
+    color: #15429e;
+    position: relative;
+    padding: 3px;
+    /* background: linear-gradient(90deg, #8fc4cd, transparent); */
+    font-size: small;
+    position: relative;
+    font-weight: 400;
+    text-shadow: #58b7e6 0 0 3px;
+}
+
+h1 {
+    color: blue;
+    /* background: linear-gradient(red, yellow, blue); */
+}
+
+#close {
+    font-size: 19px;
+    /* padding: 3px; */
+    cursor: pointer;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    transition: all 0.3s;
+    width: 17px;
+    text-align: center;
+    height: 17px;
+    line-height: 0.7;
+    float: right;
+    -webkit-app-region: no-drag;
+    color: rgba(90, 18, 18, 0.86);
+    background-color: #f0ffff5c;
+    /* margin: 0; */
+}
+
+#close:hover {
+    color: #e80b0b;
+    font-weight: bold;
+    background-color: #7ecaca;
+    background-color: black;
+}
+
+.mycontainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(135deg, rgba(196, 224, 229, 0.8), rgba(76, 161, 175, 0.8));
+    background-image: linear-gradient(135deg, rgba(152, 239, 255, 0.8), rgba(155, 207, 222, 0.8));
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(135deg, rgba(185, 255, 219, 0.75), rgba(171, 242, 255, 0.8)); */
+    background-size: cover;
+}
+
+small#credit {
+    position: absolute;
+    float: right;
+    bottom: 0px;
+    right: 0;
+    color: #ffffff;
+    font-weight: 100;
+    opacity: 0.5;
+    font-size: small;
+    padding: 3px;
+}
+
+.config {
+    display: inline-block;
+    margin-left: 50px;
+    opacity: 0.2;
+    transition: all 0.3s;
+    font-size: smaller;
+}
+
+.config:hover {
+    opacity: 1;
+}
+
+select#state {
+    border-radius: 50px;
+    padding: 1px;
+    background: #b6e1e8;
+    box-shadow: #557d7d 0 0 11px 0px;
+    -webkit-app-region: no-drag;
+}
+
+select {
+    width: 90px;
+}
+
+#ok {
+    width: 25px;
+}
+
+.cat {
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+.confirmed {
+    color: #9e1414;
+    text-shadow: #f3d6d5 0 0 3px;
+}
+
+.active {
+    color: #e2a12a;
+    text-shadow: #5a4343 0 0 3px;
+}
+
+.recover {
+    color: #008f00;
+    text-shadow: #7cffae 0 0 3px;
+}
+
+.deceased {
+    color: black;
+    text-shadow: #d8d8ff 0 0 3px;
+}
+
+#selectedState {
+    position: absolute;
+    font-size: 0.7em;
+    padding: 0;
+    top: 22px;
+    color: #3a66c5;
+    margin: 0;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.count {
+    font-size: 1.5rem;
+}
+
+.deltaCount {
+    font-size: 0.8rem;
+    margin-left: -7px;
+}
+
+.delta {}
+
+svg {
+    /* position: absolute; */
+    /* transform: translate(-26%, 95%); */
+}
+
+.distTable {
+    width: 100%;
+    font-size: x-small;
+}
+
+tr {
+    width: 100%;
+    /* font-weight: normal; */
+    color: rgba(2, 2, 2, 0.7);
+    transition: all 0.2s;
+    display: flex;
+}
+
+.conf,
+.acti,
+.reco,
+.dece {
+    text-align: center;
+    width: 20%;
+    transition: all 0.3s;
+}
+
+tr:hover {
+    background-color: rgba(190, 243, 255, 0.65);
+    font-weight: 600;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+thead:first-child {
+    text-align: left;
+}
+
+div.tableContainer {
+    /* clear: both; */
+    /* border: 1px solid #963; */
+    /* height: 285px; */
+    /* overflow: auto; */
+    /* width: 900px; */
+}
+
+html>body div.tableContainer {
+    overflow: hidden;
+    width: 100%;
+}
+
+thead.fixedHeader tr {
+    /* position: relative; */
+}
+
+html>body tbody.scrollContent {
+    display: block;
+    height: 45px;
+    overflow: auto;
+    width: 100%;
+}
+
+html>body thead.fixedHeader {
+    display: table;
+    overflow: auto;
+    width: 100%;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+table {
+    font-size: 0.7rem;
+    transition:all 0.3s;
+    
+    font-weight:600;
+}
+th{
+    opacity:0.4;
+    transition:all 0.3s;
+}
+td{
+    opacity: 0.4;
+    transition:all 0.3s;
+}
+tr:hover td{
+    opacity:1;
+}
+table:hover th{
+    opacity:1;
+}
+.deltaConf{
+    font-size: xx-small;
+    margin-left: -4px;
+}
+.top {
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.confirmed .top {
+    background: rgba(159, 31, 32, 0.36);
+}
+
+.active .top {
+    background: rgba(162, 130, 68, 0.54);
+}
+
+.recover .top {
+    background: rgba(0, 143, 0, 0.27);
+}
+
+.deceased .top {
+    background: #00000036;
+}
