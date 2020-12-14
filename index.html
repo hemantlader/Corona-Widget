@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Montserrat:wght@400;600&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mycontainer">
+        <div id="widget-title"> Corona Counter
+            <div class="config" style=" display: inline-block; ">
+                <form>
+                    <select name="state" id="state">
+                    <option value="">State</option>
+                </select>
+
+                    <label id="ok">
+                    <i class="fa fa-gear"></i>
+                </button>
+                </form>
+            </div>
+            <div id="close">×</div>
+        </div>
+        <label id="selectedState"> State </label>
+                    <div style="
+    height: 5px;
+"> </div>
+                    <div class="container-fluid">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-3 confirmed cat">
+                                <div class="top">Confirm </div>
+                                <div class="count">
+                                    <div style="padding: 0;" id="confirmCount">1024 </div>
+                                    <div class="" style=" padding: 0; margin-top: -20px; ">
+                                        <span class="delta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25" viewBox="0 0 24 24" fill="none" stroke="#9e1414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="12" y1="25" x2="12" y2="5"></line>
+                                                <polyline points="5 12 12 5 19 12"></polyline>
+                                            </svg>
+                                            <span class="deltaCount" id ="deltaConfirm">0</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 active cat">
+                                <div class="top">Active</div>
+                                <div class="count">
+                                    <div style="padding: 0;" id="activeCount">1024 </div>
+                                </div>
+                            </div>
+                            <div class="col-3 recover cat">
+                                <div class="top">Recover</div>
+                                <div class="count">
+                                    <div style="padding: 0;" id="recoverCount">1024 </div>
+                                    <div class="" style=" padding: 0; margin-top: -20px; ">
+                                        <span class="delta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                            width="10" height="25" viewBox="0 0 24 24" fill="none" 
+                                            stroke="#008f00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="12" y1="25" x2="12" y2="5"></line>
+                                                <polyline points="5 12 12 5 19 12"></polyline>
+                                            </svg>                
+                                        <span class="deltaCount" id ="deltaRecover">0</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 deceased cat">
+                                <div class="top">Deceased</div>
+                                <div class="count">
+                                    <div style="padding: 0;" id="deceasedCount">1024 </div>
+                                    <div class="" style=" padding: 0; margin-top: -20px; ">
+                                        <span class="delta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" 
+                                            height="25" viewBox="0 0 24 24" fill="none" 
+                                            stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="12" y1="25" x2="12" y2="5"></line>
+                                                <polyline points="5 12 12 5 19 12"></polyline>
+                                            </svg>
+                                            <span class="deltaCount" id="deltaDeceased">0</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="distTable " style=" border: 1px solid black; display: none; " border="3">
+                                    <thead style=" /* display: table; */ /* width: 100%; */ " class="fixedHeader">
+                                        <tr>
+                                            <th scope="col">Dist</th>
+                                            <th scope="col" class="conf">Con.</th>
+                                            <th scope="col" class="acti">Act.</th>
+                                            <th scope="col" class="reco">Rec.</th>
+                                            <th scope="col" class="dece">Dec.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="scrollContent">
+                                        <tr>
+                                            <td>Korba</td>
+                                            <td class="conf">7<span>
+                                                    <span class="delta">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25" viewBox="0 0 24 24" fill="none"
+                                                            stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                            <line x1="12" y1="25" x2="12" y2="5"></line>
+                                                            <polyline points="5 12 12 5 19 12"></polyline>
+                                                        </svg>
+                                                        <span class="deltaCount" id="deltaDeceased">0</span>
+                                                </span>
+                                                <span class="deltaConf"></span>
+                                                </span>
+                                            </td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bilaspur</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Korba</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bilaspur</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Korba</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bilaspur</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Korba</td>
+                                            <td class="conf">7</td>
+                                            <td class="acti">10</td>
+                                            <td class="reco">11</td>
+                                            <td class="dece">23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+                                    <thead class="fixedHeader">
+                                        <tr>
+                                            <th width="20%">District</th>
+                                            <th class="conf" width="20%">Confirm</th>
+                                            <th class="acti" width="20%">Active</th>
+                                            <th class="reco" width="20%">Recover</th>
+                                            <th class="dece" width="20%">Deceased</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="scrollContent" id="tbody">
+                                        <tr>
+                                            <td width="20%" class="dist">Bilaspur</td>
+                                            <td width="20%" class="conf">7<span class="distDelta">
+                                                (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 24 24" fill="none" stroke="black"
+                                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                    <line x1="12" y1="20" x2="12" y2="5"></line>
+                                                    <polyline points="5 12 12 5 19 12"></polyline>
+                                                </svg>
+                                                <span class="deltaConf">34</span>)
+                                                </span>
+                                            </td>
+                                            <td width="20%" class="acti">10</td>
+                                            <td width="20%" class="reco">11</td>
+                                            <td width="20%" class="dece">23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <small id="credit">Dev - Hemant Lader</small>
+
+            </div>
+
+            <script>
+                // alert(document.getElementById("close").innerText);
+                // document.getElementById("close").addEventListener("click", () => {
+                //     document.getElementById("selectedState").innerText = "Clicked";
+                // });
+                // let stateSelect = document.getElementById("state")
+                // let okButton = document.getElementById("ok");
+                // if (okButton && stateSelect) {
+                //     okButton.addEventListener("click", () => {
+                //         alert(stateSelect.value);
+                //     });
+                // }
+                // let isConnected = false;
+
+                function checkInternet() {
+                    console.log(navigator.onLine);
+                    isConnected = navigator.onLine;
+                }
+
+                function clearDisplay() {
+                    document.getElementById("confirmCount").innerText = "-";
+                    document.getElementById("recoverCount").innerText = "-";
+                    document.getElementById("activeCount").innerText = "-";
+                    document.getElementById("deceasedCount").innerText = "-";
+                    document.querySelector(".confirmed .delta").style.display = "none";
+                    document.getElementById("deltaConfirm").innerText = 0;
+
+                    document.querySelector(".recover .delta").style.display = "none";
+                    document.getElementById("deltaRecover").innerText = 0;
+
+                    document.querySelector(".deceased .delta").style.display = "none";
+                    document.getElementById("deltaDeceased").innerText = 0;
+
+                }
+
+                function updateData() {
+                    let label = document.getElementById('selectedState');
+                    let tBody = document.getElementById("tbody");
+                    tBody.innerHTML = "";
+                    if (isConnected) {
+                        label.style.color = "#3a66c5";
+                        let stateSelect = document.getElementById('state');
+                        let state = stateSelect.value;
+
+                        if (state.length == 0) {
+                            label.innerText = 'Select State';
+                            clearDisplay();
+                        } else {
+                            label.innerText = state;
+                            $.getJSON("https://api.covid19india.org/state_district_wise.json", (data, textStatus, jqXHR) => {
+                                if (textStatus == 'success') {
+                                    let extract = data[state];
+                                    let disctricts = extract["districtData"]
+                                    let deltaConfirm = 0,
+                                        deltaRecover = 0,
+                                        deltaDeceased = 0,
+                                        totalConfirm = 0,
+                                        totalRecover = 0,
+                                        totalActive = 0,
+                                        totalDeceased = 0;
+
+                                    $.each(disctricts, (index, v) => {
+                                        deltaConfirm += v.delta.confirmed;
+                                        deltaRecover += v.delta.recovered;
+                                        deltaDeceased += v.delta.deceased;
+                                        totalConfirm += v.confirmed;
+                                        totalRecover += v.recovered;
+                                        totalActive += v.active;
+                                        totalDeceased += v.deceased;
+                                        let thisData = '<tr> \
+                                            <td width = "20%" class="dist">' + index + '</td> \
+                                                <td width="20%" class="conf">' + v.confirmed;
+                                        if (v.delta.confirmed) {
+                                            thisData += '<span class="distDelta">\
+                                                    (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 24 24" fill="none" stroke="black"\
+                                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+                                                        <line x1="12" y1="20" x2="12" y2="5"></line>\
+                                                        <polyline points="5 12 12 5 19 12"></polyline>\
+                                                    </svg>\
+                                                    <span class="deltaConf">' + v.delta.confirmed + '</span>)\
+                                                </span>';
+                                        }
+                                        thisData += '</td>\
+                                                <td width="20%" class="acti">' + v.active + '</td>\
+                                                <td width="20%" class="reco">' + v.recovered;
+                                        if (v.delta.recovered) {
+                                            thisData += '<span class="distDelta">\
+                                                    (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 24 24" fill="none" stroke="black"\
+                                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+                                                        <line x1="12" y1="20" x2="12" y2="5"></line>\
+                                                        <polyline points="5 12 12 5 19 12"></polyline>\
+                                                    </svg>\
+                                                    <span class="deltaConf">' + v.delta.recovered + '</span>)\
+                                                </span>';
+                                        }
+                                        thisData += '</td>\
+                                                <td width="20%" class="dece">' + v.deceased;
+                                        if (v.delta.deceased) {
+                                            thisData += '<span class="distDelta">\
+                                                    (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 24 24" fill="none" stroke="black"\
+                                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+                                                        <line x1="12" y1="20" x2="12" y2="5"></line>\
+                                                        <polyline points="5 12 12 5 19 12"></polyline>\
+                                                    </svg>\
+                                                    <span class="deltaConf">' + v.delta.deceased + '</span>)\
+                                                </span>';
+                                        }
+                                        thisData += '</td> </tr >';
+                                        tBody.innerHTML = tBody.innerHTML + thisData;
+
+                                    });
+                                    // console.log(totalConfirm, totalActive, totalRecover, totalDeceased);
+                                    document.getElementById("confirmCount").innerText = totalConfirm;
+                                    document.getElementById("recoverCount").innerText = totalRecover;
+                                    document.getElementById("activeCount").innerText = totalActive;
+                                    document.getElementById("deceasedCount").innerText = totalDeceased;
+                                    if (deltaConfirm) {
+                                        document.querySelector(".confirmed .delta").style.display = "block";
+                                        document.getElementById("deltaConfirm").innerText = deltaConfirm;
+                                    } else {
+                                        document.querySelector(".confirmed .delta").style.display = "none";
+                                        document.getElementById("deltaConfirm").innerText = 0;
+                                    }
+                                    if (deltaRecover) {
+                                        document.querySelector(".recover .delta").style.display = "block";
+                                        document.getElementById("deltaRecover").innerText = deltaRecover;
+                                    } else {
+                                        document.querySelector(".recover .delta").style.display = "none";
+                                        document.getElementById("deltaRecover").innerText = 0;
+                                    }
+                                    if (deltaDeceased) {
+                                        document.querySelector(".deceased .delta").style.display = "block";
+                                        document.getElementById("deltaDeceased").innerText = deltaDeceased;
+                                    } else {
+                                        document.querySelector(".deceased .delta").style.display = "none";
+                                        document.getElementById("deltaDeceased").innerText = 0;
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        label.style.color = "red";
+                        label.innerText = 'Checck your connection';
+                    }
+
+
+                }
+
+                function populateOptions() {
+                    $.getJSON("https://api.covid19india.org/state_district_wise.json", (data) => {
+                        let stateSelect = document.getElementById("state")
+                        $.each(data, function(index) {
+                            let opt = document.createElement("option");
+                            opt.value = index;
+                            opt.innerText = index;
+                            stateSelect.appendChild(opt);
+                        })
+                    })
+                }
+                $(document).ready(() => {
+
+                    document.getElementById("state").addEventListener("change", () => {
+                        checkInternet();
+                        updateData();
+                    });
+                    populateOptions();
+                    checkInternet();
+                    updateData();
+                    setInterval(checkInternet, 5000);
+                    setInterval(updateData, 60000);
+                }, false);
+                // require('./index.js');
+            </script>
+
+
+
+            <!-- <script src="index.js"></script> -->
+
+
+</body>
+
+</html>
